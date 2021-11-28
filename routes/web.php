@@ -27,7 +27,9 @@ Route::post("/register", [AuthController::class, "register"])->name("register.se
 
 Route::group(["middleware" => "login"], function() {
     Route::get("/home", [BackendController::class, "home"])->name("home");
-    Route::get("/delete", [BackendController::class, "home"])->name("delete");
+    Route::get("/add", [BackendController::class, "indexAdd"])->name("add");
+    Route::post("/add", [BackendController::class, "addUser"])->name("add.send");
+    Route::get("/delete/{id}", [BackendController::class, "del"])->name("delete");
     Route::get("/logout", [AuthController::class, "logout"])->name("logout");
 });
 

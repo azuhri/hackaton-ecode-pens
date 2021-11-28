@@ -130,8 +130,8 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                  <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
+                  <li><a class="nav-link" href="{{route("home")}}">List Nomor Hp</a></li>
+                  <li><a class="nav-link" href="{{route("add")}}">Add User</a></li>
                 </ul>
               </li>
         </aside>
@@ -437,8 +437,8 @@
               <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
-                  <li><a class="nav-link" href="index-0.html">General Dashboard</a></li>
-                  <li><a class="nav-link" href="index.html">Ecommerce Dashboard</a></li>
+                    <li><a class="nav-link" href="{{route("home")}}">List Nomor Hp</a></li>
+                    <li><a class="nav-link" href="{{route("add")}}">Add User</a></li>
                 </ul>
               </li>
         </section>
