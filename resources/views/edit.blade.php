@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="col-md-12 cons-form" >
-    <form action="{{route("add.send")}}" method="POST">
+    <form action="{{route("edit.send",$findUser->id)}}" method="POST">
         @csrf
         @if (session("error"))
             <div class="alert alert-danger text-center" role="alert">
@@ -16,19 +16,11 @@
         @endif
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
-          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" name="email" value="{{$findUser->email}}" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
         </div>
         <div class="form-group">
           <label for="exampleInputPassword1">No. Hp</label>
-          <input type="number" name="no_hp" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" name="password" name="password2" class="form-control" id="exampleInputPassword1">
-        </div>
-        <div class="form-group">
-            <label for="exampleInputPassword1">Password Konfirmasi</label>
-            <input type="password" name="password_confirm" class="form-control" id="exampleInputPassword1">
+          <input type="number" name="no_hp" value="{{$findUser->phonenumber}}" class="form-control" id="exampleInputPassword1">
         </div>
         <button type="submit" class="btn btn-primary" id="btnLogin">Daftar</button>
     </form>

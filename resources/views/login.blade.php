@@ -32,6 +32,9 @@ Login
                 {{session("success")}}
             </div>
         @endif
+        <div class="form-group text-center">
+            <h4 class="font-weight-bold text-info">Phonebook Apps</h4>
+        </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Email</label>
           <input required type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">

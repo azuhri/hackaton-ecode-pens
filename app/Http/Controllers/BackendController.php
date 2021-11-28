@@ -12,6 +12,7 @@ class BackendController extends Controller
     {
         $auth = session("user");
         $users = User::where("id","!=", $auth->id)
+        ->orderBy("id","DESC")
         ->paginate(5);
         $data = [
             "users"
@@ -78,6 +79,29 @@ class BackendController extends Controller
                 return redirect()->back()->with("success","User ". $createNewUser->email. " berhasil dibuat dengan password: ". $pass);
             }
 
+        }
+    }
+
+    public function indexEdit($id)
+    {
+        $findUser = User::find($id);
+        if(!$findUser) {
+            return redirect()->back()->with("error","User tidak terdaftar");
+        } else {
+            return view("edit",compact("findUser"));
+        }
+    }
+
+    public function edit(Request $request,$id)
+    {
+        $findUser = User::find($id);
+        if(!$findUser) {
+            return redirect()->back()->with("error","User tidak terdaftar");
+        } else {
+            $findUser->email = $request->email;
+            $findUser->phonenumber = $request->no_hp;
+            $findUser->update();
+            return redirect()->route("home")->with("success","User berhasil diedit");
         }
     }
 }
